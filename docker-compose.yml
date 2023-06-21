@@ -1,5 +1,15 @@
-environment:
-        - MYSQL_ROOT_PASSWORD=123321huy
-        - MYSQL_USER=user
-        - MYSQL_PASSWORD=123321huy
-        - MYSQL_DATABASE=qlyoto
+version: '1' 
+  services:
+   db:
+    image: mysql
+    volumes:
+      - "./sito/db/:/var/lib/mysql"
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123321huy
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=123321huy
+      - MYSQL_DATABASE=qlyoto
+        
